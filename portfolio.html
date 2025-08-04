@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Kakade - Java Fullstack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .tech-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .parallax-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold gradient-text">Shivam's Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
+                    <a href="#projects" class="hover:text-purple-400 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="floating-animation">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    Hi, I'm <span class="gradient-text">Shivam Kakade</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Java Fullstack Developer passionate about creating robust web applications
+                    and seamless user experiences
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('projects')" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105 glow-effect">
+                        View My Work
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="px-8 py-4 border-2 border-purple-500 rounded-full font-semibold hover:bg-purple-500 transition-all transform hover:scale-105">
+                        Find Me Here
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">About Me</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    A passionate Java fullstack developer building scalable web applications
+                    and a keen eye for modern design principles.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-white">My Journey</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        I specialize in fullstack development with Java as my core backend technology, 
+                        combined with modern frontend frameworks and databases. I love creating 
+                        applications that are not only functional but also provide excellent user experiences.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        My experience spans from desktop applications using Java as my core technology to modern web 
+                        applications with comprehensive backend systems and responsive frontend designs.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-2xl p-8 card-hover">
+                    <h4 class="text-2xl font-bold mb-6 gradient-text">Tech Stack</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="tech-badge bg-gray-700 px-4 py-3 rounded-lg text-center cursor-pointer">
+                            <div class="font-semibold">Java</div>
+                            <div class="text-sm text-gray-400">Backend</div>
+                        </div>
+                        <div class="tech-badge bg-gray-700 px-4 py-3 rounded-lg text-center cursor-pointer">
+                            <div class="font-semibold">HTML/CSS/JS</div>
+                            <div class="text-sm text-gray-400">Frontend</div>
+                        </div>
+                        <div class="tech-badge bg-gray-700 px-4 py-3 rounded-lg text-center cursor-pointer">
+                            <div class="font-semibold">MySQL</div>
+                            <div class="text-sm text-gray-400">Database</div>
+                        </div>
+                        <div class="tech-badge bg-gray-700 px-4 py-3 rounded-lg text-center cursor-pointer">
+                            <div class="font-semibold">Python</div>
+                            <div class="text-sm text-gray-400">Scripting</div>
+                        </div>
+                        <div class="tech-badge bg-gray-700 px-4 py-3 rounded-lg text-center cursor-pointer">
+                            <div class="font-semibold">Git/GitHub</div>
+                            <div class="text-sm text-gray-400">Version Control</div>
+                        </div>
+                        <div class="tech-badge bg-gray-700 px-4 py-3 rounded-lg text-center cursor-pointer">
+                            <div class="font-semibold">Spring Boot</div>
+                            <div class="text-sm text-gray-400">Backend Framework</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">My Projects</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Here are some of the projects I've built, showcasing my skills in fullstack development
+                </p>
+            </div>
+            
+            <!-- Projects Carousel -->
+            <div class="relative">
+                <!-- Navigation Arrows -->
+                <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-purple-600/80 hover:bg-purple-600 text-white p-3 rounded-full backdrop-blur-md transition-all transform hover:scale-110 -ml-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                
+                <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-purple-600/80 hover:bg-purple-600 text-white p-3 rounded-full backdrop-blur-md transition-all transform hover:scale-110 -mr-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <!-- Projects Container -->
+                <div class="overflow-hidden rounded-2xl">
+                    <div id="projectsSlider" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Project 1 -->
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover h-full">
+                                <div class="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+                                    <div class="text-6xl">🎮</div>
+                                </div>
+                                <div class="p-8">
+                                    <h3 class="text-2xl font-bold mb-4">Rock Paper Scissors Game</h3>
+                                    <p class="text-gray-300 mb-6">
+                                        Interactive desktop game built with Java Swing featuring intuitive GUI, 
+                                        game logic, and score tracking system.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-sm">Java</span>
+                                        <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm">Swing</span>
+                                        <span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-sm">Desktop App</span>
+                                    </div>
+                                    <a href="https://github.com/shivxmmm/Java-Projects.git" target="_blank" class="block w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all text-center">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 2 -->
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover h-full">
+                                <div class="h-48 bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center">
+                                    <div class="text-6xl">🏢</div>
+                                </div>
+                                <div class="p-8">
+                                    <h3 class="text-2xl font-bold mb-4">Intern Portal Website</h3>
+                                    <p class="text-gray-300 mb-6">
+                                        Full-stack web application which i made as an assignment for a NGO which shows intern details and how much funds he/she raised on dashboard with Java Maven backend, 
+                                        MySQL database, and responsive Tailwind CSS frontend.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-orange-600/20 text-orange-300 rounded-full text-sm">Java</span>
+                                        <span class="px-3 py-1 bg-red-600/20 text-red-300 rounded-full text-sm">Maven</span>
+                                        <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm">MySQL</span>
+                                        <span class="px-3 py-1 bg-cyan-600/20 text-cyan-300 rounded-full text-sm">Tailwind</span>
+                                    </div>
+                                    <a href="https://github.com/shivxmmm/intern-portal.git" target="_blank" class="block w-full py-3 bg-gradient-to-r from-green-600 to-teal-600 rounded-lg font-semibold hover:from-green-700 hover:to-teal-700 transition-all text-center">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 - Add your future projects here -->
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover h-full">
+                                <div class="h-48 bg-gradient-to-br from-orange-600 to-red-600 flex items-center justify-center">
+                                    <div class="text-6xl">🌐</div>
+                                </div>
+                                <div class="p-8">
+                                    <h3 class="text-2xl font-bold mb-4">E-Commerce Platform</h3>
+                                    <p class="text-gray-300 mb-6">
+                                        Future project - Full-stack e-commerce solution with Spring Boot backend,
+                                        React frontend, and integrated payment gateway.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-sm">Spring Boot</span>
+                                        <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm">React</span>
+                                        <span class="px-3 py-1 bg-yellow-600/20 text-yellow-300 rounded-full text-sm">Payment API</span>
+                                    </div>
+                                    <a href="#" class="block w-full py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all text-center">
+                                        Coming Soon
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 - Add your future projects here -->
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover h-full">
+                                <div class="h-48 bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center">
+                                    <div class="text-6xl">📱</div>
+                                </div>
+                                <div class="p-8">
+                                    <h3 class="text-2xl font-bold mb-4">Banking System</h3>
+                                    <p class="text-gray-300 mb-6">
+                                        Future project - Secure banking management system with Java backend,
+                                        comprehensive user authentication and transaction handling.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm">Java</span>
+                                        <span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-sm">Spring Security</span>
+                                        <span class="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-sm">MySQL</span>
+                                    </div>
+                                    <a href="#" class="block w-full py-3 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg font-semibold hover:from-pink-700 hover:to-purple-700 transition-all text-center">
+                                        Coming Soon
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center mt-8 space-x-2" id="dotsContainer">
+                    <button class="dot w-3 h-3 rounded-full bg-purple-600 transition-all" data-slide="0"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-gray-600 hover:bg-purple-400 transition-all" data-slide="1"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-gray-600 hover:bg-purple-400 transition-all" data-slide="2"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-gray-600 hover:bg-purple-400 transition-all" data-slide="3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 parallax-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Let's Connect</h2>
+            <p class="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
+                Ready to bring your next project to life? Let's discuss how we can work together
+                to create something amazing.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 card-hover">
+                    <div class="text-4xl mb-4">📧</div>
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <a href="mailto:shivamkakade79@gmail.com" class="text-white/80 hover:text-white transition-colors">shivamkakade79@gmail.com</a>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 card-hover">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="text-xl font-bold mb-2">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/shivam-kakade-570278255" target="_blank" class="text-white/80 hover:text-white transition-colors">https://www.linkedin.com/in/shivam-kakade-570278255</a>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 card-hover">
+                    <div class="text-4xl mb-4">🐙</div>
+                    <h3 class="text-xl font-bold mb-2">GitHub</h3>
+                    <a href="https://github.com/shivxmmm" target="_blank" class="text-white/80 hover:text-white transition-colors">https://github.com/shivxmmm</a>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 card-hover">
+                    <div class="text-4xl mb-4">👨‍💻</div>
+                    <h3 class="text-xl font-bold mb-2">LeetCode</h3>
+                    <a href="https://leetcode.com/u/shivamcodinggod/" target="_blank" class="text-white/80 hover:text-white transition-colors">https://leetcode.com/u/shivamcodinggod/</a>
+                </div>
+            </div>
+            
+            <a href="Shivam's Resume.pdf" download class="px-12 py-4 bg-white text-purple-900 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 glow-effect">
+                Download Resume
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">&copy; 2025 Shivam Kakade. Crafted with passion and code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Projects Carousel Functionality
+        let currentSlide = 0;
+        const totalSlides = 4; // Update this when you add more projects
+        const slider = document.getElementById('projectsSlider');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateSlider() {
+            const translateX = -currentSlide * (100 / 2); // 2 projects visible on desktop
+            slider.style.transform = `translateX(${translateX}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.remove('bg-gray-600');
+                    dot.classList.add('bg-purple-600');
+                } else {
+                    dot.classList.remove('bg-purple-600');
+                    dot.classList.add('bg-gray-600');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+            });
+        });
+
+        // Auto-slide (optional)
+        setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) {
+                nextSlide(); // Swipe left
+            } else if (endX - startX > 50) {
+                prevSlide(); // Swipe right
+            }
+        });
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function toggleMobileMenu() {
+            // Mobile menu toggle functionality
+            console.log('Mobile menu toggle');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-gray-900/95');
+            } else {
+                nav.classList.remove('bg-gray-900/95');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
